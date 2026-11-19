@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Adviento para Morrr 🎄💘</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Nieve de fondo -->
+    <div id="snow-container"></div>
+
+    <div id="app">
+        <!-- Controles superiores (Música navideña / vuestra canción) -->
+        <audio id="bg-music" loop>
+            <source src="assets/cancion.mp3" type="audio/mpeg">
+        </audio>
+        <div class="top-controls">
+            <div id="music-btn" class="control-btn" onclick="toggleMusic()">🔇</div>
+        </div>
+
+        <!-- Cabecera -->
+        <header class="advent-header">
+            <span class="badge-navidad">✨ Diciembre 2026 ✨</span>
+            <h1>Adviento para mi Amorrr 🎄💘</h1>
+            <p class="subtitle">24 días, 24 sorpresas hechas a mano para ti, Morrr💘.</p>
+            <div class="progress-card">
+                <span id="progress-text">Abiertos: 0 / 24 días</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Cuadrícula de los 24 días -->
+        <main class="advent-grid" id="advent-grid"></main>
+    </div>
+
+    <!-- MODAL DE SORPRESA DIARIA -->
+    <div id="surprise-modal" class="modal-overlay" onclick="closeModalOutside(event)">
+        <div class="modal-card">
+            <button class="close-btn" onclick="closeModal()">✕</button>
+            <span id="modal-day-badge" class="modal-badge">Día 1</span>
+            <h2 id="modal-title">Título de la sorpresa</h2>
+            <div id="modal-body" class="modal-content"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
